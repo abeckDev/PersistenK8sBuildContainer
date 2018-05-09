@@ -10,7 +10,7 @@ spec:
       image: myownregistry.registrydomain.com/mymaven:latest # Image of the Container
       imagePullPolicy: Always # Always pull Build Container because there might be updates
       command: [ "/bin/bash" ] # Execute Bash
-      args: ["-c", 'run=1; while true; do echo "This is the $run run and I am still alive."; run=$((run+1)); sleep 3; done'] # A simple keepalive script to prevent the container from beeing closed and restarted.
+      args: ["-c", 'run=1; while true; do echo "This is the $run run and I am still alive!"; run=$((run+1)); sleep 3; done'] # A simple keepalive script to prevent the container from beeing closed and restarted.
       securityContext:
         runAsUser: 0 # Container will be run as user root (otherwise change to a diffrent user id)
       volumeMounts: # Defines Mount points for the container
